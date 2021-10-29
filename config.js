@@ -10,7 +10,7 @@ DATABASE_URL = process.env.DATABASE_URL === undefined ? './whatsalexa.db' : proc
 DEBUG = process.env.DEBUG === undefined ? false : convertToBool(process.env.DEBUG);
 
 module.exports = {
-    VERSION: 'V2 Public Stable',
+    VERSION: 'V3 Public Stable',
     SESSION: process.env.ALEXA_SESSION === undefined ? '' : process.env.ALEXA_SESSION,
     ANTILINK: process.env.ANTI_LINK === undefined ? 'false' : process.env.ANTI_LINK,
     FULLALEXA: process.env.FULL_ALEXA === undefined ? 'false' : process.env.FULL_ALEXA,
