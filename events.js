@@ -1,41 +1,231 @@
-let config = require('./config');
-let Commands = [];
-
-function addCommand(info, func) {
-
-    let types = ['photo', 'image', 'text', 'message'];
-
-    var infos = {
-        fromMe: info['fromMe'] === undefined ? false : info['fromMe'],
-        onlyGroup: info['onlyGroup'] === undefined ? false : info['onlyGroup'],
-        onlyPinned: info['onlyPinned'] === undefined ? false : info['onlyPinned'],
-        onlyPm: info['onlyPm'] === undefined ? false : info['onlyPm'],
-        deleteCommand: info['deleteCommand'] === undefined ? true : info['deleteCommand'],
-        desc: info['desc'] === undefined ? '' : info['desc'],
-        usage: info['usage'] === undefined ? '' : info['usage'],
-        dontAddCommandList: info['dontAddCommandList'] === undefined ? false : info['dontAddCommandList'],
-        warn: info['warn'] === undefined ? '' : info['warn'],
-        function: func
-    };
-
-    if (info['on'] === undefined && info['pattern'] === undefined) {
-        infos.on = 'message';
-        infos.fromMe = false;
-    } else if (info['on'] !== undefined && types.includes(info['on'])) {
-        infos.on = info['on'];
-
-        if (info['pattern'] !== undefined) {
-            infos.pattern = new RegExp((info['handler'] === undefined || info['handler'] === true ? config.HANDLERS : '') + info.pattern, (info['flags'] !== undefined ? info['flags'] : ''));
-        }
-    } else {
-        infos.pattern = new RegExp((info['handler'] === undefined || info['handler'] === true ? config.HANDLERS : '') + info.pattern, (info['flags'] !== undefined ? info['flags'] : ''));
+function _0x1896(_0x312166, _0x5b4b10) {
+  const _0x22869a = _0x2286();
+  return (
+    (_0x1896 = function (_0x189698, _0x42150a) {
+      _0x189698 = _0x189698 - 0x190;
+      let _0x4df737 = _0x22869a[_0x189698];
+      return _0x4df737;
+    }),
+    _0x1896(_0x312166, _0x5b4b10)
+  );
+}
+(function (_0x4fde43, _0x16ebdf) {
+  const _0x18b8f4 = _0x1896,
+    _0x951025 = _0x4fde43();
+  while (!![]) {
+    try {
+      const _0x4f9aa5 =
+        -parseInt(_0x18b8f4(0x1ae)) / 0x1 +
+        (parseInt(_0x18b8f4(0x19a)) / 0x2) *
+          (parseInt(_0x18b8f4(0x195)) / 0x3) +
+        (parseInt(_0x18b8f4(0x1aa)) / 0x4) *
+          (parseInt(_0x18b8f4(0x198)) / 0x5) +
+        (-parseInt(_0x18b8f4(0x1ab)) / 0x6) *
+          (parseInt(_0x18b8f4(0x1a1)) / 0x7) +
+        -parseInt(_0x18b8f4(0x1a8)) / 0x8 +
+        -parseInt(_0x18b8f4(0x1a3)) / 0x9 +
+        parseInt(_0x18b8f4(0x19b)) / 0xa;
+      if (_0x4f9aa5 === _0x16ebdf) break;
+      else _0x951025["push"](_0x951025["shift"]());
+    } catch (_0x2b7d10) {
+      _0x951025["push"](_0x951025["shift"]());
     }
-
-    Commands.push(infos);
-    return infos;
+  }
+})(_0x2286, 0x5aebc);
+function _0x9574(_0x3bb7f8, _0x32f645) {
+  const _0xa402 = _0xe0a8();
+  return (
+    (_0x9574 = function (_0x35a823, _0x11855b) {
+      _0x35a823 = _0x35a823 - 0xd8;
+      let _0x128d53 = _0xa402[_0x35a823];
+      return _0x128d53;
+    }),
+    _0x9574(_0x3bb7f8, _0x32f645)
+  );
 }
-
-module.exports = {
-    addCommand: addCommand,
-    commands: Commands
+const _0x1b47ae = _0x9574;
+function _0x2286() {
+  const _0x4565ca = [
+    "247431VxVdBM",
+    "8MbGjLt",
+    "10dyOhgh",
+    "72VsiuOW",
+    "2enHlch",
+    "18662620kdHPwt",
+    "flags",
+    "132ESXcoX",
+    "deleteCommand",
+    "fromMe",
+    "image",
+    "143829SmxNYR",
+    "5TiKbyb",
+    "4967343iYWJPi",
+    "group",
+    "includes",
+    "347568UZutdk",
+    "shift",
+    "5424568SydlPG",
+    "1016246vCiGAR",
+    "733808trDRbO",
+    "72Phygii",
+    "54971wtiEzF",
+    "handler",
+    "559931OqcqMb",
+    "warn",
+    "192wnAwvY",
+    "desc",
+    "hideFromCommandList",
+    "pattern",
+    "pinned",
+    "usage",
+    "116816PaQQhh",
+    "private",
+    "text",
+    "push",
+    "HANDLERS",
+    "exports",
+    "208210LSVnhz",
+    "527217iaWPML",
+  ];
+  _0x2286 = function () {
+    return _0x4565ca;
+  };
+  return _0x2286();
 }
+(function (_0x16c49b, _0x27b886) {
+  const _0x2815a3 = _0x1896,
+    _0x74e4d2 = _0x9574,
+    _0xb44351 = _0x16c49b();
+  while (!![]) {
+    try {
+      const _0x31bb89 =
+        -parseInt(_0x74e4d2(0xe8)) / 0x1 +
+        (-parseInt(_0x74e4d2(0xe7)) / 0x2) * (parseInt(_0x74e4d2(0xe4)) / 0x3) +
+        -parseInt(_0x74e4d2(0xd9)) / 0x4 +
+        (-parseInt(_0x74e4d2(0xeb)) / 0x5) * (parseInt(_0x74e4d2(0xdb)) / 0x6) +
+        (parseInt(_0x74e4d2(0xe3)) / 0x7) * (parseInt(_0x74e4d2(0xe1)) / 0x8) +
+        (parseInt(_0x74e4d2(0xd8)) / 0x9) * (-parseInt(_0x74e4d2(0xdf)) / 0xa) +
+        (parseInt(_0x74e4d2(0xde)) / 0xb) * (parseInt(_0x74e4d2(0xee)) / 0xc);
+      if (_0x31bb89 === _0x27b886) break;
+      else _0xb44351[_0x2815a3(0x191)](_0xb44351[_0x2815a3(0x1a7)]());
+    } catch (_0xba38cb) {
+      _0xb44351[_0x2815a3(0x191)](_0xb44351[_0x2815a3(0x1a7)]());
+    }
+  }
+})(_0xe0a8, 0x3101d);
+let config = require(_0x1b47ae(0xda)),
+  Commands = [];
+function newCommand(_0x452c1a, _0x414f09) {
+  const _0xa63502 = _0x1896,
+    _0x513cdf = _0x1b47ae;
+  let _0x1d442b = [
+    _0x513cdf(0xef),
+    _0xa63502(0x1a0),
+    _0x513cdf(0xdc),
+    _0x513cdf(0xf5),
+  ];
+  var _0x546d35 = {
+    private:
+      _0x452c1a[_0x513cdf(0xdd)] === undefined
+        ? ![]
+        : _0x452c1a[_0x513cdf(0xdd)],
+    group:
+      _0x452c1a[_0x513cdf(0xf4)] === undefined
+        ? ![]
+        : _0x452c1a[_0x513cdf(0xf4)],
+    pinned:
+      _0x452c1a[_0x513cdf(0xed)] === undefined
+        ? ![]
+        : _0x452c1a[_0xa63502(0x1b4)],
+    pm: _0x452c1a["pm"] === undefined ? ![] : _0x452c1a["pm"],
+    deleteCommand:
+      _0x452c1a[_0x513cdf(0xea)] === undefined
+        ? !![]
+        : _0x452c1a[_0x513cdf(0xea)],
+    desc:
+      _0x452c1a[_0xa63502(0x1b1)] === undefined
+        ? ""
+        : _0x452c1a[_0x513cdf(0xe9)],
+    usage:
+      _0x452c1a[_0xa63502(0x1b5)] === undefined
+        ? ""
+        : _0x452c1a[_0xa63502(0x1b5)],
+    hideFromCommandList:
+      _0x452c1a[_0x513cdf(0xf3)] === undefined
+        ? ![]
+        : _0x452c1a[_0xa63502(0x1b2)],
+    warn:
+      _0x452c1a[_0x513cdf(0xe2)] === undefined
+        ? ""
+        : _0x452c1a[_0x513cdf(0xe2)],
+    function: _0x414f09,
+  };
+  if (_0x452c1a["on"] === undefined && _0x452c1a[_0x513cdf(0xec)] === undefined)
+    (_0x546d35["on"] = _0x513cdf(0xf5)), (_0x546d35[_0x513cdf(0xe6)] = ![]);
+  else
+    _0x452c1a["on"] !== undefined &&
+    _0x1d442b[_0xa63502(0x1a5)](_0x452c1a["on"])
+      ? ((_0x546d35["on"] = _0x452c1a["on"]),
+        _0x452c1a[_0x513cdf(0xec)] !== undefined &&
+          (_0x546d35[_0x513cdf(0xec)] = new RegExp(
+            (_0x452c1a[_0x513cdf(0xe0)] === undefined ||
+            _0x452c1a[_0x513cdf(0xe0)] === !![]
+              ? config[_0x513cdf(0xe5)]
+              : "") + _0x452c1a[_0x513cdf(0xec)],
+            _0x452c1a[_0xa63502(0x19c)] !== undefined
+              ? _0x452c1a[_0xa63502(0x19c)]
+              : ""
+          )))
+      : (_0x546d35[_0xa63502(0x1b3)] = new RegExp(
+          (_0x452c1a[_0x513cdf(0xe0)] === undefined ||
+          _0x452c1a[_0x513cdf(0xe0)] === !![]
+            ? config[_0x513cdf(0xe5)]
+            : "") + _0x452c1a[_0x513cdf(0xec)],
+          _0x452c1a[_0xa63502(0x19c)] !== undefined
+            ? _0x452c1a[_0x513cdf(0xf0)]
+            : ""
+        ));
+  return Commands[_0x513cdf(0xf2)](_0x546d35), _0x546d35;
+}
+function _0xe0a8() {
+  const _0x342787 = _0x1896,
+    _0x3ab35c = [
+      "784422iKYQro",
+      _0x342787(0x190),
+      _0x342787(0x1b7),
+      _0x342787(0x1a9),
+      _0x342787(0x194),
+      _0x342787(0x1ad),
+      _0x342787(0x1b0),
+      _0x342787(0x1af),
+      _0x342787(0x1ac),
+      _0x342787(0x196),
+      _0x342787(0x192),
+      _0x342787(0x19f),
+      _0x342787(0x197),
+      _0x342787(0x1a6),
+      _0x342787(0x1b1),
+      _0x342787(0x19e),
+      _0x342787(0x1a2),
+      _0x342787(0x1b3),
+      _0x342787(0x1b4),
+      _0x342787(0x19d),
+      "photo",
+      "flags",
+      _0x342787(0x193),
+      _0x342787(0x191),
+      _0x342787(0x1b2),
+      _0x342787(0x1a4),
+      "message",
+      _0x342787(0x199),
+      _0x342787(0x1b6),
+      "./config",
+    ];
+  return (
+    (_0xe0a8 = function () {
+      return _0x3ab35c;
+    }),
+    _0xe0a8()
+  );
+}
+module[_0x1b47ae(0xf1)] = { newCommand: newCommand, commands: Commands };
