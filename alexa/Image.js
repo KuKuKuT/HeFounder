@@ -35,8 +35,8 @@ class Image extends Base {
         return await this.client.deleteMessage(this.jid, {id: this.id, remoteJid: this.jid, fromMe: true})
     }
 
-    async reply(text) {
-        var message = await this.client.sendMessage(this.jid, text, MessageType.text, {quoted: this.data})
+    async sendReply(text) {
+        var message = await this.client.sendMessage(this.jid, text, MessageType.text, {contextInfo: { forwardingScore: 49, isForwarded: true }, quoted: this.data})
         return new Message(this.client, message)
     }
 
@@ -44,8 +44,24 @@ class Image extends Base {
         return await this.client.sendMessage(this.jid, content, type, options)
     }
 
+    async sendUnread() {
+        return await this.client.chatRead(this.jid, 'unread')
+    }
+
     async sendTyping() {
         return await this.client.updatePresence(this.jid, Presence.composing) ;
+    }
+
+    async sendRecording() {
+        return await this.client.updatePresence(this.jid, Presence.recording) ;
+    }
+
+    async sendOnline() {
+        return await this.client.updatePresence(this.jid, Presence.available) ;
+    }
+
+    async sendOffline() {
+        return await this.client.updatePresence(this.jid, Presence.unavailable) ;
     }
 
     async sendRead() {
