@@ -26,6 +26,11 @@
             "required": true,
             "value": "false"
         },
+        "LOG": {
+            "description": "Type 'false' to remove error messages which you will get and Type 'true' to get error messages on your log number and Type 'chat' to get error messages to the chat which you are trying the command.",
+            "required": true,
+            "value": "true"
+        },
         "FULL_ALEXA": {
             "description": "It turns your account to Alexa AI ChatBot.",
             "required": true,
