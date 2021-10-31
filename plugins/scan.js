@@ -1,4 +1,4 @@
-let WhatsAlexa = require('../events');
+let { newCommand } = require('../events');
 let {MessageType} = require('@adiwajshing/baileys');
 let Config = require('../config');
 let fs = require('fs');
