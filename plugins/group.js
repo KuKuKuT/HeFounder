@@ -66,7 +66,13 @@ newCommand(
     }
 }));
 
-WhatsAlexa.addCommand({pattern: 'add(?: |$)(.*)', fromMe: true, onlyGroup: true, desc: Lang.ADD_DESC}, (async (message, match) => {  
+newCommand(
+         {pattern: 'add(?: |$)(.*)',
+          private: true,
+          group: true,
+          desc: Lang.ADD_DESC},
+          (async (message, match) => { 
+
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
 
@@ -80,7 +86,13 @@ WhatsAlexa.addCommand({pattern: 'add(?: |$)(.*)', fromMe: true, onlyGroup: true,
     }
 }));
 
-WhatsAlexa.addCommand({pattern: 'promote ?(.*)', fromMe: true, onlyGroup: true, desc: Lang.PROMOTE_DESC}, (async (message, match) => {    
+newCommand(
+          {pattern: 'promote ?(.*)',
+           private: true,
+           group: true,
+           desc: Lang.PROMOTE_DESC},
+           (async (message, match) => {  
+ 
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
 
@@ -138,7 +150,13 @@ WhatsAlexa.addCommand({pattern: 'promote ?(.*)', fromMe: true, onlyGroup: true, 
     }
 }));
 
-WhatsAlexa.addCommand({pattern: 'demote ?(.*)', fromMe: true, onlyGroup: true, desc: Lang.DEMOTE_DESC}, (async (message, match) => {    
+newCommand(
+         {pattern: 'demote ?(.*)',
+          private: true,
+          group: true,
+          desc: Lang.DEMOTE_DESC},
+          (async (message, match) => { 
+  
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN);
 
@@ -196,7 +214,13 @@ WhatsAlexa.addCommand({pattern: 'demote ?(.*)', fromMe: true, onlyGroup: true, d
     }
 }));
 
-WhatsAlexa.addCommand({pattern: 'closegc ?(.*)', fromMe: true, onlyGroup: true, desc: Lang.MUTE_DESC}, (async (message, match) => {    
+newCommand(
+         {pattern: 'closegc ?(.*)',
+          private: true,
+          group: true,
+          desc: Lang.MUTE_DESC},
+          (async (message, match) => { 
+  
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
 
@@ -210,7 +234,13 @@ WhatsAlexa.addCommand({pattern: 'closegc ?(.*)', fromMe: true, onlyGroup: true, 
     }
 }));
 
-WhatsAlexa.addCommand({pattern: 'opengc ?(.*)', fromMe: true, onlyGroup: true, desc: Lang.UNMUTE_DESC}, (async (message, match) => {    
+newCommand(
+         {pattern: 'opengc ?(.*)',
+          private: true,
+          group: true,
+          desc: Lang.UNMUTE_DESC},
+          (async (message, match) => { 
+  
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
 
@@ -224,7 +254,13 @@ WhatsAlexa.addCommand({pattern: 'opengc ?(.*)', fromMe: true, onlyGroup: true, d
     }
 }));
 
-WhatsAlexa.addCommand({pattern: 'linkgc ?(.*)', fromMe: true, onlyGroup: true, desc: Lang.INVITE_DESC}, (async (message, match) => {    
+newCommand(
+         {pattern: 'linkgc ?(.*)',
+          private: true,
+          group: true,
+          desc: Lang.INVITE_DESC},
+          (async (message, match) => {  
+ 
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN, MessageType.text);
     
@@ -232,7 +268,13 @@ WhatsAlexa.addCommand({pattern: 'linkgc ?(.*)', fromMe: true, onlyGroup: true, d
     await message.client.sendMessage(message.jid,Lang.INVITE + ' https://chat.whatsapp.com/' + invite, MessageType.text);
 }));
 
-WhatsAlexa.addCommand({pattern: 'setname ?(.*)', onlyGroup: true, fromMe: true, desc: Lang.SET_NAME_DESC}, (async (message, match) => {
+newCommand(
+         {pattern: 'setname ?(.*)',
+          group: true,
+          private: true,
+          desc: Lang.SET_NAME_DESC},
+          (async (message, match) => {
+
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
     
