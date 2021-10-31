@@ -7,7 +7,11 @@ let Lang = Language.getString('tagall');
 
 if (Config.WORKTYPE == 'private') {
   
-    WhatsAlexa.addCommand({ pattern: 'scan ?(.*)', fromMe: true, desc: Lang.SCAN}, (async (message, match) => { 
+    newCommand(
+             { pattern: 'scan ?(.*)',
+              private: true,
+              desc: Lang.SCAN},
+             (async (message, match) => { 
 
         if (match[1] == '') return await message.client.sendMessage(message.jid, Lang.NO, MessageType.text, {contextInfo: { forwardingScore: 49, isForwarded: true }, quoted: message.data});
       
@@ -22,7 +26,11 @@ if (Config.WORKTYPE == 'private') {
 }
 else if (Config.WORKTYPE == 'public') {
   
-    WhatsAlexa.addCommand({ pattern: 'scan ?(.*)', fromMe: false, desc: Lang.SCAN}, (async (message, match) => { 
+    newCommand(
+             { pattern: 'scan ?(.*)',
+              private: false,
+              desc: Lang.SCAN},
+              (async (message, match) => { 
 
         if (match[1] == '') return await message.client.sendMessage(message.jid, Lang.NO, MessageType.text, {contextInfo: { forwardingScore: 49, isForwarded: true }, quoted: message.data});
       
