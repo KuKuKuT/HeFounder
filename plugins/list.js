@@ -58,6 +58,7 @@ if (Config.LANG == 'ID') warning = 'Kami tidak bertanggung jawab atas segala aki
                     var A = [];
                     var O = [];
                     var D = [];
+                    if (!command.category) M.push(match);
                     if (command.category == 'MISC') M.push(match);
                     if (command.category == 'ADMIN') A.push(match);
                     if (command.category == 'OWNER') O.push(match);
