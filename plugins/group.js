@@ -1,5 +1,5 @@
 let {MessageType, GroupSettingChange} = require('@adiwajshing/baileys');
-let WhatsAlexa = require('../events');
+let { newCommand } = require('../events');
 let Config = require('../config');
 let FilterDb = require('./sql/filters');
 let Language = require('../language');
@@ -22,7 +22,13 @@ async function checkImAdmin(message, user = message.client.user.jid) {
     return sonuc.includes(true);
 }
 
-WhatsAlexa.addCommand({pattern: 'kick ?(.*)', fromMe: true, onlyGroup: true, desc: Lang.BAN_DESC}, (async (message, match) => {  
+newCommand(
+         {pattern: 'kick ?(.*)',
+          private: true,
+          group: true,
+          desc: Lang.BAN_DESC},
+          (async (message, match) => { 
+
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
 
@@ -59,60 +65,6 @@ WhatsAlexa.addCommand({pattern: 'kick ?(.*)', fromMe: true, onlyGroup: true, des
         }
     }
 }));
-
-/*WhatsAlexa.addCommand({pattern: 'promoteall ?(.*)', onlyGroup: true, fromMe: true, desc: Lang.PROALL_DESC}, (async (message, match) => {
-    var im = await checkImAdmin(message);
-    if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
-    
-    let users = participants.filter((member) => (!member.isAdmin == true || member.includes(message.client.user.jid)));
-    for (let user of users) {
-       await message.client.sendMessage(message.jid, Lang.PROMOTING_ALL, MessageType.text);
-       await new Promise((r) => setTimeout(r, 1000));
-       await message.client.groupMakeAdmin(message.jid, user);
-       await message.client.sendMessage(message.jid, Lang.PROMOTED_ALL, MessageType.text);
-    }
-}));
-
-WhatsAlexa.addCommand({pattern: 'demoteall ?(.*)', onlyGroup: true, fromMe: true, desc: Lang.PROALL_DESC}, (async (message, match) => {
-    var im = await checkImAdmin(message);
-    if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
-    
-    let users = participants.filter((member) => (!member.isAdmin == false || member.includes(message.client.user.jid)));
-    for (let user of users) {
-       await message.client.sendMessage(message.jid, Lang.DEMOTING_ALL, MessageType.text);
-       await new Promise((r) => setTimeout(r, 1000));
-       await message.client.groupMakeAdmin(message.jid, user);
-       await message.client.sendMessage(message.jid, Lang.DEMOTING_ALL, MessageType.text);
-    }
-}));
-
-WhatsAlexa.addCommand({pattern: 'kickall ?(.*)', onlyGroup: true, fromMe: true, desc: Lang.KICKALL_DESC}, (async (message, match) => {
-    var im = await checkImAdmin(message);
-    if (!im) return await message.client.sendMessage(message.jid,Lang.IM_NOT_ADMIN,MessageType.text);
-    
-    if (match[1].includes('admins')) {
-        let users = participants.filter((member) => (!member.isAdmin == false || member.includes(message.client.user.jid)));
-        for (let user of users) {
-          await message.client.sendMessage(message.jid, Lang.KICKING_ADMINS, MessageType.text);
-          await new Promise((r) => setTimeout(r, 1000));
-          await message.groupRemove(message.jid, user);
-          await message.client.sendMessage(message.jid, Lang.KICKED_ADMINS, MessageType.text);
-    } else if (match[1].includes('members')) {
-        let users = participants.filter((member) => (!member.isAdmin == true || member.includes(message.client.user.jid)));
-        for (let user of users) {
-          await message.client.sendMessage(message.jid, Lang.KICKING_MEMBERS, MessageType.text);
-          await new Promise((r) => setTimeout(r, 1000));
-          await message.groupRemove(message.jid, user);
-          await message.client.sendMessage(message.jid, Lang.KICKED_MEMBERS, MessageType.text);
-    } else {
-        let users = participants.filter((member) => (!member.includes(message.client.user.jid)));
-        for (let user of users) {
-          await message.client.sendMessage(message.jid, Lang.KICKING_EVERYONE, MessageType.text);
-          await new Promise((r) => setTimeout(r, 1000));
-          await message.groupRemove(message.jid, user);
-          await message.client.sendMessage(message.jid, Lang.KICKED_EVERYONE, MessageType.text);
-    }
-}));!!!NoLangSupport!!!*/
 
 WhatsAlexa.addCommand({pattern: 'add(?: |$)(.*)', fromMe: true, onlyGroup: true, desc: Lang.ADD_DESC}, (async (message, match) => {  
     var im = await checkImAdmin(message);
