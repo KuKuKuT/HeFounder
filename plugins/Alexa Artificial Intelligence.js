@@ -54,6 +54,7 @@ var _0x219a23=_0x4b8d;function _0x4b8d(_0x2b92c7,_0x8ba149){var _0x13865a=_0x138
 newCommand(
          { pattern: 'voicechat$',
           desc: voicechat_dsc,
+          category: 'MISC',
           private: wk },
           (async (message, match) => {
 
@@ -65,6 +66,7 @@ function _0x5116(_0x209330,_0x424f81){var _0x1171ac=_0x11f6();return _0x5116=fun
 newCommand(
          { pattern: 'fullalexa ?(.*)',
           desc: fullalexa_dsc,
+          category: 'MISC',
           private: true},
           (async (message, match) => {
 
