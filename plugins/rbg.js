@@ -12,7 +12,7 @@ let Lang = Language.getString('removebg');
 
 if (Config.WORKTYPE == 'private') {
 
-    WhatsAlexa.addCommand({pattern: 'rbg ?(.*)', fromMe: true, desc: Lang.REMOVEBG_DESC}, (async (message, match) => {    
+    WhatsAlexa.newCommand({pattern: 'rbg ?(.*)', private: true, desc: Lang.REMOVEBG_DESC}, (async (message, match) => {    
 
         if (message.reply_message === false || message.reply_message.image === false) return await message.client.sendMessage(message.jid,Lang.NEED_PHOTO,MessageType.text);
         if (Config.RBG_API_KEY === false) return await message.client.sendMessage(message.jid,Lang.NO_API_KEY.replace('remove.bg', 'https://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki/Remove-BG-API-Key'),MessageType.text);
@@ -48,7 +48,7 @@ if (Config.WORKTYPE == 'private') {
 }
 else if (Config.WORKTYPE == 'public') {
 
-    WhatsAlexa.addCommand({pattern: 'rbg ?(.*)', fromMe: false, desc: Lang.REMOVEBG_DESC}, (async (message, match) => {    
+    WhatsAlexa.newCommand({pattern: 'rbg ?(.*)', private: false, desc: Lang.REMOVEBG_DESC}, (async (message, match) => {    
 
         if (message.reply_message === false || message.reply_message.image === false) return await message.client.sendMessage(message.jid,Lang.NEED_PHOTO,MessageType.text);
         if (Config.RBG_API_KEY === false) return await message.client.sendMessage(message.jid,Lang.NO_API_KEY.replace('remove.bg', 'https://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki/Remove-BG-API-Key'),MessageType.text);
